@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATtiny2313A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>PetStanokV1</AssemblyName>
+    <Name>PetStanokV1</Name>
+    <RootNamespace>PetStanokV1</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E910A</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.Device>-mmcu=attiny2313a -B "%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\gcc\dev\attiny2313a"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcccpp.compiler.symbols.DefSymbols>
+        <avrgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+          </ListValues>
+        </avrgcccpp.compiler.directories.IncludePaths>
+        <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcccpp.linker.libraries.Libraries>
+        <avrgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+          </ListValues>
+        </avrgcccpp.assembler.general.IncludePaths>
+      </AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=attiny2313a -B "%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\gcc\dev\attiny2313a"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=c++17</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcc.compiler.miscellaneous.SupportAnsiPrograms>True</avrgcc.compiler.miscellaneous.SupportAnsiPrograms>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../Configuration</Value>
+      <Value>../Include</Value>
+      <Value>../src/Include</Value>
+      <Value>../src/OS/Types/Include</Value>
+      <Value>../src/OS/Types/Generic/Include</Value>
+      <Value>../src/OS/Drivers/Include</Value>
+      <Value>../src/OS/Drivers/Stepper/Include</Value>
+      <Value>../src/OS/System/Include</Value>
+      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=c++17</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.miscellaneous.Verbose>True</avrgcccpp.compiler.miscellaneous.Verbose>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.8.332\include\</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Include\PetStanok.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherDIR.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherM0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherM1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherM2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherRST.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherSLP.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\PinSwitcherSTP.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\Stepper.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\StepperDirection.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Include\StepperMode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherDIR.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherM0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherM1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherM2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherRST.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherSLP.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\PinSwitcherSTP.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\Stepper.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\StepperDirection.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Stepper\StepperMode.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\System\Include\Interrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\System\Include\Timer0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\System\Include\Timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\System\Interrupts.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\System\Timer0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Types\Generic\Include\Bits.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\PetStanok.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\AnalogComparator.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Heater.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Include\AnalogComparator.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Include\Heater.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Include\Led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\OS\Drivers\Led.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Include\PreCompiller.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Include" />
+    <Folder Include="Configuration" />
+    <Folder Include="src" />
+    <Folder Include="src\Include" />
+    <Folder Include="src\OS" />
+    <Folder Include="src\OS\Drivers\Include" />
+    <Folder Include="src\OS\Drivers\Stepper" />
+    <Folder Include="src\OS\Drivers\Stepper\Include" />
+    <Folder Include="src\OS\Drivers" />
+    <Folder Include="src\OS\System" />
+    <Folder Include="src\OS\System\Include" />
+    <Folder Include="src\OS\Types" />
+    <Folder Include="src\OS\Types\Generic\Include" />
+    <Folder Include="src\OS\Types\Include" />
+    <Folder Include="src\OS\Types\Generic" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
