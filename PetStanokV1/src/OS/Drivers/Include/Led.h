@@ -1,4 +1,5 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #ifndef __LED_H__
 #define __LED_H__
 
@@ -6,12 +7,16 @@
 
 class Led 
 {
+
 public:
 	Led();
-	//~Led();
 	
-	void On();
-	void Off();
+	static void Init();
+		
+	static void On();
+	static void Off();
+
+	static void Toggle();
 	
 }; //Led
 

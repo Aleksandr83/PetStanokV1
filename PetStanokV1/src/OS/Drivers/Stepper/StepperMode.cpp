@@ -1,18 +1,20 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #include "StepperMode.h"
 
 namespace OS  {
 namespace Drivers {
 namespace StepperParts {
-	
+
 	
 StepperMode::TStepperMode StepperMode::Get()
 {
 	return _Mode;
 }
 
+
 void StepperMode::Set(TStepperMode mode)
-{
+{	
 	if (mode == TStepperMode::FullStep)
 	{
 		SetModeFullStep();

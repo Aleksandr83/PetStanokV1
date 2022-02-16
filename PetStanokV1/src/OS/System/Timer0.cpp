@@ -1,4 +1,5 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #include "Timer0.h"
 #include "Interrupts.h"
 
@@ -18,11 +19,11 @@ Timer0::Timer0()
 } 
 
 void Timer0::Init()
-{
-	TCCR1A  = 0;
+{	
+	TCCR0A  = 0;
 	OCR0A   = 0;
 	OCR0B   = 0;
-	SetTimerPrescaler(TTimerPrescaler::ClockPrescaling1024);
+	SetTimerPrescaler(TTimerPrescaler::ClockPrescaling64);
 	Reset();	
 	Interrupts::DisableTimer0();
 }
@@ -59,8 +60,8 @@ void Timer0::Stop()
 
 void Timer0::OnTimerInterrupt()
 {
-	if (Timer0::_Timer0 == NULL) return;
-	if (Timer0::_Timer0->_Callback != NULL)	
+	//if (Timer0::_Timer0 == NULL) return;
+	//if (Timer0::_Timer0->_Callback != NULL)	
 		Timer0::_Timer0->_Callback();
 	Timer0::_Timer0->Reset();
 }

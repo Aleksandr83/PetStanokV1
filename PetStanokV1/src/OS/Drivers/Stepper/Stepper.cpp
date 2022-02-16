@@ -1,6 +1,8 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #include "Stepper.h"
 #include "PreCompiller.h"
+#include "StepperState.h"
 
 namespace OS {
 namespace Drivers {
@@ -15,7 +17,7 @@ void Stepper::Init()
 }
 
 void Stepper::Reset()
-{
+{	
 	_ResetPin.Off();
 	_delay_ms(__STEPPER_DELAY_RST);
 	_ResetPin.On();
@@ -43,6 +45,7 @@ void Stepper::SetDirection(StepperDirection::TStepperDirection direction)
 
 void Stepper::Step()
 {
+	if (StepperState::_IsPause) return;
 	_StepPin.On();
 	_delay_ms(__STEPPER_DELAY_STEP);
 	_StepPin.Off();

@@ -1,37 +1,46 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #include "PetStanok.h"
 #include "Interrupts.h"
+#include "Uart.h"
 
 using OS::System::Interrupts;
 
-Led				 PetStanok::_Led;
 Heater			 PetStanok::_Heater;
 AnalogComparator PetStanok::_AnalogComparator;
 Stepper			 PetStanok::_Stepper;
-Timer0			 PetStanok::_TimerCheckingTemperature;
+
+bool             PetStanok::_IsInit  = false;
+//Timer1			 PetStanok::_TimerCheckingTemperature;
+bool			 PetStanok::_IsCancelWaitTemperature;
 
 void PetStanok::Init()
 {
+	Led::Init();
 	LedToggleOnStart();
 	_Stepper.Init();
-	_AnalogComparator.Enable();	
-	Interrupts::EnableAll();
+	_AnalogComparator.Enable();		
+	_IsInit = true;
 }
 
 void PetStanok::Run()
 {
-	Init();
-	_TimerCheckingTemperature.Start(PetStanok::OnTimerCheckingTemperature);
+	//Init();
+	//_TimerCheckingTemperature.Start(PetStanok::OnTimerCheckingTemperature);
 	
 	_Stepper.Sleep();
-	while(!IsTemperatureCorrect());
-	_Stepper.Unsleep();
-	
+	_IsCancelWaitTemperature = false;
+	while(!IsTemperatureCorrect())
+	{ 
+		if (_IsCancelWaitTemperature) break; 
+	};
+	_Stepper.Unsleep();		
 	for(;;)
 	{		
-		_Stepper.Step();
+		PetStanok::_Stepper.Step();	
 	}
 }
+
 
 bool PetStanok::IsTemperatureCorrect()
 {
@@ -39,14 +48,14 @@ bool PetStanok::IsTemperatureCorrect()
 }
 
 void PetStanok::OnTimerCheckingTemperature()
-{
+{	
 	if (!IsTemperatureCorrect())
 	{
-		_Heater.On();
+		_Heater.On();	
 	}
 	else
 	{
-		_Heater.Off();
+		_Heater.Off();	
 	}
 }
 
@@ -55,10 +64,7 @@ void PetStanok::LedToggleOnStart()
 #if (__ENABLE_LED_TOGLE_ON_START != 0)
 	for (int i = 0; i < __COUNT_LED_TOGGLE; i++)
 	{
-		_Led.On();
-		_delay_ms(__DELAY_LED_TOGGLE);
-		_Led.Off();
-		_delay_ms(__DELAY_LED_TOGGLE);
+		Led::Toggle();			
 	}
 #endif
 }

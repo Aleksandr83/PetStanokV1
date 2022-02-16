@@ -1,4 +1,5 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #ifndef TIMERS_H_
 #define TIMERS_H_
 
@@ -23,6 +24,6 @@ enum TTimerPrescaler
 }}
 
 #include "Timer0.h"
-	
+#include "Timer1.h"
 
 #endif /* TIMERS_H_ */

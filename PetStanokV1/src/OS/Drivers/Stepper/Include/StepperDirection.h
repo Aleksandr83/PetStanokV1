@@ -1,4 +1,5 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #ifndef __STEPPERDIRECTION_H__
 #define __STEPPERDIRECTION_H__
 
@@ -15,8 +16,8 @@ class StepperDirection
 public:
 	enum TStepperDirection
 	{
-		Normal,
-		Reverse
+		Normal	= 0xA0,
+		Reverse = 0xB0
 	};
 
 private:

@@ -1,4 +1,5 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #ifndef SYSTEM_TYPES_GENERIC_BITS_H_
 #define SYSTEM_TYPES_GENERIC_BITS_H_
 

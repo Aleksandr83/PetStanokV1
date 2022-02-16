@@ -1,4 +1,5 @@
-// Copyright (c) 2022 Lukin Aleksandr
+// Copyright © 2022 Lukin Aleksandr
+// e-mail: lukin.a.g.spb@gmail.com
 #ifndef __CHEATER_H__
 #define __CHEATER_H__
 
@@ -13,7 +14,6 @@ private:
 
 public:
 	Heater();
-	//~Heater();
 	
 	void On();
 	void Off();
